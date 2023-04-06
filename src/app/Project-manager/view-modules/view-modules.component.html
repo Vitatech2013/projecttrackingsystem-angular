@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+      <tr>
+       <th>S.NO.</th>
+       <th>Project Name</th>
+       <th>Module</th>
+       <th>TeamLeader</th>
+       <th>Date</th>
+       <th>Status</th>
+       <th>Actions</th> 
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor=" let v of viewmodule ;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{v.project}}</td>
+        <td>{{v.module}}</td>
+        <td>{{v.teamleader}}</td>
+        <td>{{v.date}}</td>
+        <td>{{v.status}}</td>
+        
+        <td>
+            <button class="btn btn-primary">Download</button>
+           
+        </td>
+     </tr>
+    </tbody>
+  </table>
+
+
+
+

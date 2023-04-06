@@ -1,0 +1,31 @@
+<div class="card" >
+    <form [formGroup]= "Pmlogin">
+        <div class="header">Project Manager Login</div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label  class="form-label">Username</label>
+                    <input [class.is-invalid]= "userName?.invalid && userName?.touched" type="text" class="form-control"  placeholder="Username" formControlName="userName">
+                    <div *ngIf= "userName?.invalid && userName?.touched">
+                        <small class="text-danger" *ngIf= "userName?.errors?.['required']">Username is required</small> 
+                        <small class="text-danger" *ngIf= "userName?.errors?.['minlength']">Username must be 4 charecters</small>   
+                       </div>
+                   </div>
+                 
+                  <div>
+                    <label  class="form-label">Password</label>
+                    <input [class.is-invalid]= "pwd?.invalid && pwd?.touched" type="password" class="form-control"  placeholder=" Password" formControlName="pwd">
+                    <div *ngIf= "pwd?.invalid && pwd?.touched">
+                        <small class="text-danger" *ngIf= "pwd?.errors?.['required']">Password is required</small> 
+                        <small class="text-danger" *ngIf= "pwd?.errors?.['minlength']">Password must be 4 charecters</small>   
+                       </div>
+                  </div>
+                  <label  class="form-label">Role</label>
+                  <input type="text" value="Devloper" class="form-control"  placeholder=" Project Manager" formControlName="role" readonly>
+                </div>
+                 <div class="footer">
+                    <button class="btn btn-primary" (click)="submit()" [disabled]="Pmlogin.invalid">Login</button>
+                </div>
+    </form>            
+</div>
+
+

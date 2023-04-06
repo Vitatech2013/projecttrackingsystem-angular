@@ -1,0 +1,19 @@
+.header{
+    text-align: center;
+    background-color: #759997;
+    height: 100px;
+    font-weight: bold;
+    padding: 30px;
+    font-size: 30px;
+    color: rgb(60 61 32);
+}
+.navbar{
+    background-color: rgb(128, 121, 121);
+    padding: 20px;
+    height: 60px;    
+}
+a {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}

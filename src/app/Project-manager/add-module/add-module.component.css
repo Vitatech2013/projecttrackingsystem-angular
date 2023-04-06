@@ -1,0 +1,22 @@
+.card{
+    width: 500px;
+    height: 450px;
+    margin-left: 450px;
+    margin-top: 30px;
+}
+.header{
+    background-color: rgb(198, 189, 189);
+    text-align: center;
+    font-weight: bold;
+    height: 50px;
+    color: rgb(79, 27, 27);
+    padding: 10px;
+    font-size: 20px;
+
+}
+.btn{
+    margin-left: 200px;
+}
+label{
+    font-weight: bold;
+}

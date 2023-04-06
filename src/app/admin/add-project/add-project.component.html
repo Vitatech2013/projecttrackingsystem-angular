@@ -1,0 +1,39 @@
+<form [formGroup]="AddProject" (ngSubmit)="submit()">
+<div class="card">
+    <div class="header">Add Project</div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Project Name</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Project Name" formControlName="project"> 
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Technology</label>
+                <select class="form-select" aria-label="Default select example" formControlName="technology">
+                    <option selected>--select--</option>
+                    <option value="Java">Java</option>
+                    <option value="PHP">PHP</option>
+                    <option value=".Net">.Net</option>
+                    <option value="Android">Android</option>
+                    <option value="Fullstock">Fullstock</option>
+                  </select> 
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Project Manager</label>
+                <select class="form-select" aria-label="Default select example" formControlName="manager">
+                    <option *ngFor="let p of projectmanagers" value="{{p.username}}">{{p.username}}</option>                      
+                </select> 
+             </div>
+              
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Duration</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="duration"> 
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Attachment</label>
+                <input type="file" class="form-control" aria-describedby="emailHelp" formControlName="file"> 
+            </div>
+            <button type="submit" class=" btn btn-primary" >Add</button> 
+        </div>
+             
+</div>
+</form>

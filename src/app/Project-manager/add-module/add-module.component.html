@@ -1,0 +1,29 @@
+<form [formGroup]="Addmodule" (ngSubmit)="submit()">
+    <div class="card">
+        <div class="header">Add Module</div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Project Name</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="project">
+                        <option *ngFor="let p of viewprojects" value="{{p.project}}">{{p.project}}</option>                      
+                      </select>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">TeamLeader</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="teamleader">
+                        <option *ngFor="let t of teameleaders" value="{{t.username}}">{{t.username}}</option>                      
+                      </select> 
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Module</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="module"> 
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Attachment</label>
+                    <input type="file" class="form-control" aria-describedby="emailHelp" formControlName="file"> 
+                </div>
+                <button type="submit" class=" btn btn-primary" >Addmodule</button> 
+            </div>
+                 
+    </div>
+    </form>

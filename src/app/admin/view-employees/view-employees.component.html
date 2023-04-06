@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+      <tr>
+       <th>S.NO.</th>
+       <th>Emp Id</th>
+       <th>Role</th>
+       <th>Superior</th>
+       <th>FullName</th>
+       <th>UserName</th>
+       <th>Mobile No.</th>
+       <th>Email Id</th>
+       <th>Qualification</th>
+       <th>Adress</th>
+       <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor=" let e of viewEmployees;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{e.empid}}</td>
+        <td>{{e.role}}</td>
+        <td>{{e.superior}}</td>
+        <td>{{e.firstname}} {{e.lastname}}</td>
+        <td>{{e.username}}</td>
+        <td>{{e.mobileno}}</td>
+        <td>{{e.emailid}}</td>
+        <td>{{e.qualification}}</td>
+        <td>{{e.address}}</td>
+        <td>
+          <button class="btn btn-primary">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+     </tr>
+    </tbody>
+  </table>
+
+
