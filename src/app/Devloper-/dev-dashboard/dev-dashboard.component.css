@@ -1,14 +1,14 @@
 .header{
     text-align: center;
-    background-color: rgb(26 40 53 / 52%);
+    background-color: #679097;
     height: 100px;
     font-weight: bold;
     padding: 30px;
     font-size: 30px;
-    color: rgb(11 13 1 / 85%);
+    color: rgb(61, 43, 32);
 }
 .navbar{
-    background-color: rgb(68 56 56 / 94%);
+    background-color: rgb(66 17 17);
     padding: 20px;
     height: 60px;    
 }
@@ -17,4 +17,3 @@ a {
     font-weight: bold;
     font-size: 20px;
 }
-

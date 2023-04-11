@@ -27,11 +27,139 @@
         <td>{{e.qualification}}</td>
         <td>{{e.address}}</td>
         <td>
-          <button class="btn btn-primary">Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-primary" type="button" data-bs-toggle="modal" (click)="editemp(e)" data-bs-target="#exampleModals">Edit</button>
+          <button class="btn btn-danger" (click)="deleteEmp(e._id)">Delete</button>
         </td>
      </tr>
     </tbody>
   </table>
 
 
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+        
+               <div class="card-body">
+                   <div>
+                       <form [formGroup]="Emp" (ngSubmit)="update()">
+                           <div class="row">
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label  class="form-label">Employee Id</label>
+                                       <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="empid">
+                                       <!-- <div *ngIf= "EId?.invalid && EId?.touched">
+                                           <small class="text-danger" *ngIf= "EId?.errors?.['required']">EmpId is required</small>   
+                                       </div> -->
+                                     </div>
+                               </div>
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Role</label>
+                                       <select class="form-select" aria-label="Default select example" formControlName="role" (change)="isSuperior($event)">
+                                           <option selected>--select--</option>
+                                           <option value="Project Manger">Project Manger</option>
+                                           <option value="Team Leader">Team Leader</option>
+                                           <option value="Developer">Developer</option>
+                                         </select>
+                                         <!-- <div *ngIf= "role?.invalid && role?.touched">
+                                           <small class="text-danger" *ngIf= "role?.errors?.['required']">EmpId is required</small>   
+                                       </div>                                -->
+                                    </div>                             
+                               </div>
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Superior</label>
+                                       <select class="form-select" aria-label="Default select example" formControlName="superior">
+                                           <option *ngFor="let s of superiors" value="{{s.username}}">{{s.username}}</option>                      
+                                       </select> 
+                                      
+                                          
+                                                                      
+                                     </div>                              
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">First Name</label>
+                                       <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="firstname">
+                                     </div>
+                               </div>
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                                       <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="lastname">                                
+                                    </div>                             
+                               </div>
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Username</label>
+                                       <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="username">                                
+                                     </div>                              
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                                       <input type="number" class="form-control"  aria-describedby="emailHelp" formControlName="mobileno">
+                                     </div>
+                               </div>
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Email Id</label>
+                                       <input type="email" class="form-control"  aria-describedby="emailHelp" formControlName="emailid">                                
+                                    </div>                             
+                               </div>
+                               <div class="col-sm-4">
+                                   <div class="mb-3">
+                                       <label for="exampleInputEmail1" class="form-label">Qualification</label>
+                                       <select class="form-select" aria-label="Default select example" formControlName="qualification">
+                                           <option selected>--select--</option>
+                                           <option value="Degree">Degree</option>
+                                           <option value="B.Tech">B.Tech</option>
+                                           <option value="M.Tech">M.Tech</option>
+                                           <option value="MBA">MBA</option>
+                                           <option value="MCA">MCA</option>
+                                           <option value="others">others</option>
+                                         </select>                                
+                                     </div>                              
+                               </div>
+                           </div> 
+                           <div class="col-sm-4">
+                               <div class="mb-3">
+                                   <label for="exampleInputEmail1" class="form-label">Address</label>
+                                   <textarea type="text" class="form-control"  aria-describedby="emailHelp" formControlName="address"> </textarea>                               
+                                 </div>                              
+                           </div> 
+                           
+                   <div class="footer">
+                       <button type="submit" class="btn btn-primary" [disabled]="Emp.invalid" >Update</button>
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                   </div>              
+                         </form>
+                   </div>
+               </div>
+       </div>
+      </div>
+     
+    </div>
+  </div>
+</div>

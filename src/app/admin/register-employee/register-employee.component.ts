@@ -32,12 +32,17 @@ username:any
       });
   }
 addEmp(){
-  // if(this.Emp.valid){
-    this.api.PostEmp(this.Emp.value).subscribe((res)=>{
-      console.log(res);
+  const password = Math.floor((Math.random() * 1000000) + 1);
+  let data={
+    ...this.Emp.value,
+    password:password
+  }
+   alert('Add Employee sucessfully')
+    this.api.PostEmp(data).subscribe((res)=>{
+      
       
     })
-  // }
+ 
 }
 
 isSuperior(event:any){
@@ -53,12 +58,12 @@ else {
   s = "Admin";
 }
 console.log(selection);
-console.log(s);
+
 
 
  this.api.viewEmpsBasedonSuperior(s).subscribe((res:any)=>{
    this.superiors=res
-   console.log(this.superiors);
+
   
      })
 }

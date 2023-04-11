@@ -23,6 +23,9 @@ import { TLViewEmployeesComponent } from './team-leader/Team-Leader/tl-view-empl
 import { TLAddtaskComponent } from './team-leader/Team-Leader/tl-addtask/tl-addtask.component';
 import { TLViewtaskComponent } from './team-leader/Team-Leader/tl-viewtask/tl-viewtask.component';
 import { TLViewModulesComponent } from './team-leader/Team-Leader/tl-view-modules/tl-view-modules.component';
+import { DevDashboardComponent } from './Devloper-/dev-dashboard/dev-dashboard.component';
+import { DevProfileComponent } from './Devloper-/dev-profile/dev-profile.component';
+import { DevViewtaskComponent } from './Devloper-/dev-viewtask/dev-viewtask.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -57,6 +60,10 @@ const routes: Routes = [
     { path:'tladdtask',component:TLAddtaskComponent},
     { path:'tlviewtask',component:TLViewtaskComponent},
     { path:'tlviewmodule',component:TLViewModulesComponent},
+  ]},
+  { path:'devdashboard',component:DevDashboardComponent, children:[
+    { path:'devprofile',component:DevProfileComponent},
+    { path:'devviewtask',component:DevViewtaskComponent}
   ]}
 ];
 

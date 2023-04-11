@@ -28,6 +28,11 @@ import { TLAddtaskComponent } from './team-leader/Team-Leader/tl-addtask/tl-addt
 import { TLViewtaskComponent } from './team-leader/Team-Leader/tl-viewtask/tl-viewtask.component';
 import { TLViewModulesComponent } from './team-leader/Team-Leader/tl-view-modules/tl-view-modules.component';
 import { TLDashboardComponent } from './team-leader/Team-Leader/tl-dashboard/tl-dashboard.component';
+import { DevProfileComponent } from './Devloper-/dev-profile/dev-profile.component';
+import { DevViewtaskComponent } from './Devloper-/dev-viewtask/dev-viewtask.component';
+import { DevDashboardComponent } from './Devloper-/dev-dashboard/dev-dashboard.component';
+import { DevLoginComponent } from './Devloper-/dev-login/dev-login.component';
+import { EditEmployeeComponent } from './admin/edit-employee/edit-employee.component';
 
 
 
@@ -51,7 +56,7 @@ import { TLDashboardComponent } from './team-leader/Team-Leader/tl-dashboard/tl-
     ViewModulesComponent,
     PmViewEmployeeComponent,
     PmViewProjectComponent, 
-    AdmimChangePwdComponent, TLProfileComponent, TLViewEmployeesComponent, TLAddtaskComponent, TLViewtaskComponent, TLViewModulesComponent, TLDashboardComponent,
+    AdmimChangePwdComponent, TLProfileComponent, TLViewEmployeesComponent, TLAddtaskComponent, TLViewtaskComponent, TLViewModulesComponent, TLDashboardComponent, DevProfileComponent, DevViewtaskComponent, DevDashboardComponent, DevLoginComponent, EditEmployeeComponent,
   
   ],
   imports: [

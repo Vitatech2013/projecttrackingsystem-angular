@@ -32,7 +32,7 @@ TLlogin =this.fb.group({
     
     if(res){
       alert('login success')
-      localStorage.setItem('token', JSON.stringify(res))
+      localStorage.setItem('teamleader', JSON.stringify(res))
       this.router.navigate(['/tldashboard'])
     }else{
       alert('login failed')

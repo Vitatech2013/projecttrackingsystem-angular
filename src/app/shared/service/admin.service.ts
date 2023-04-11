@@ -19,8 +19,8 @@ export class AdminService {
   }
 
   
-  Dlogin(uname:any,pwd:any){
-    return this.http.get('http://localhost:1234/TLlogin/login?username='+uname+'&password='+pwd)
+  Dlogin(uname:any,pwd:any,role:any){
+    return this.http.get('http://localhost:1234/developer/login?username='+uname+'&password='+pwd+'&role='+role)
   }
 
   PostEmp(data:any){
@@ -43,6 +43,12 @@ export class AdminService {
   }
   viewEmpsBasedonName(s:any){
     return this.http.get('http://localhost:1234/admin/superiors?role='+s)
+  }
+  updateEmployee(id:any,data:any){
+    return this.http.put('http://localhost:1234/admin/update/'+id,data)
+  }
+  deleteEmployee(id:any){
+    return this.http.delete('http://localhost:1234/admin/delete/'+id)
   }
 }
 

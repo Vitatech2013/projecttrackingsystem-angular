@@ -13,8 +13,9 @@ export class DevloperComponent {
     private adminService:AdminService,private router:Router){}
 
 Dlogin =this.fb.group({
-  userName:['',[Validators.required,Validators.minLength(4)]],
-  pwd:['',[Validators.required,Validators.minLength(4)]]
+  userName:['',[Validators.required]],
+  pwd:['',[Validators.required]],
+  role: ['Developer'],
 
  });
  ngOnInit():void{}
@@ -24,11 +25,14 @@ Dlogin =this.fb.group({
  get pwd(){
    return this.Dlogin.get('pwd')
  }
- submit(){
-  this.adminService.Dlogin(this.Dlogin.value.userName, this.Dlogin.value.pwd).subscribe((res:any)=>{
+ Login(){
+  this.adminService.Dlogin(this.Dlogin.value.userName, this.Dlogin.value.pwd,this.Dlogin.value.role).subscribe((res:any)=>{
     if(res){
+     
+      
       alert('login success')
-  this.router.navigate(['/home'])
+      localStorage.setItem('developer', JSON.stringify(res))
+      this.router.navigate(['/devdashboard'])
     }else{
       alert('login failed')
     }

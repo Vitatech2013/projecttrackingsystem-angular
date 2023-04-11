@@ -10,14 +10,25 @@ import { TLServiceService } from '../tl-service.service';
 export class TLAddtaskComponent implements OnInit{
   Addtask ! :FormGroup
   devlopers:any
-constructor(private fb :FormBuilder,private adtask:TLServiceService,private dev:TLServiceService){
+  viewprojects:any
+  name:any
+  viewmodules:any
+constructor(private fb :FormBuilder,private tlService:TLServiceService,){
  
-  let name = JSON.parse(localStorage.getItem('token')!)
+  let name = JSON.parse(localStorage.getItem('teamleader')!)
 
-  this.dev.getDeveloper(name.username).subscribe((res:any)=>{
-    this.devlopers=res
-    
-      })
+   this.tlService.getDeveloper(name.username).subscribe((res:any)=>{
+     this.devlopers=res
+ })  
+console.log(name.username);
+
+this.tlService.getProjects(name.username).subscribe((res:any)=>{
+  this.viewprojects=res
+console.log(this.viewprojects);
+
+})
+
+
 }
 
   ngOnInit(): void {
@@ -28,18 +39,27 @@ constructor(private fb :FormBuilder,private adtask:TLServiceService,private dev:
       developer:['',[Validators.required]],
       task:['',[Validators.required]],
       file:['',[Validators.required]],
-     
+      status:['New Module'],
+      date:[new Date()],
      })
   
       
     }
+
+    isGetModule(event:any){
+      let pname = JSON.parse(localStorage.getItem('teamleader')!).username
+      this.tlService.getModules(pname,event.target.value).subscribe((res:any)=>{
+        this.viewmodules=res
+      })
+    }
+
     submit(){
-      
-      this.adtask.Addtask(this.Addtask.value).subscribe((res:any)=>{
-        console.log(res,'addpr');
+      alert('Add Task Sucessfully')
+      this.tlService.Addtask(this.Addtask.value).subscribe((res:any)=>{
+       
         
       })
     }
   
-}
 
+  }

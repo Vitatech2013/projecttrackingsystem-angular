@@ -39,8 +39,9 @@ this.teameleaders=res
   
   }
   submit(){
+    alert('Add Module sucessfully')
     this.api.AddModule(this.Addmodule.value).subscribe((res:any)=>{
-      console.log(res,'addmodule');
+     
       
     })
   }

@@ -17,7 +17,7 @@ export class AddProjectComponent {
   
     this.api.viewEmpsBasedonName('Project Manager').subscribe((res:any)=>{
       this.projectmanagers=res
-      console.log( this.projectmanagers);
+      
       
         })
   }
@@ -35,9 +35,9 @@ export class AddProjectComponent {
     
   }
   submit(){
-    
+    alert('Add Project suceesfully')
     this.api.AddProject(this.AddProject.value).subscribe((res:any)=>{
-      console.log(res,'addpr');
+     
       
     })
   }
