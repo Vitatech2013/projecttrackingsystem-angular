@@ -46,11 +46,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade " id="exampleModals"  aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered" style="width: 700px;">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Employee</h1>
+        <h1 class="modal-title fs-5 " id="exampleModalLabel" style="margin-left: 150px;color: rgb(75, 20, 20);font-weight: bold;" >Update Employee</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -63,7 +63,7 @@
                                <div class="col-sm-4">
                                    <div class="mb-3">
                                        <label  class="form-label">Employee Id</label>
-                                       <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="empid">
+                                       <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="empid" readonly>
                                        <!-- <div *ngIf= "EId?.invalid && EId?.touched">
                                            <small class="text-danger" *ngIf= "EId?.errors?.['required']">EmpId is required</small>   
                                        </div> -->
@@ -111,7 +111,7 @@
                                <div class="col-sm-4">
                                    <div class="mb-3">
                                        <label for="exampleInputEmail1" class="form-label">Username</label>
-                                       <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="username">                                
+                                       <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="username" readonly>                                
                                      </div>                              
                                </div>
                            </div>
@@ -151,8 +151,8 @@
                            </div> 
                            
                    <div class="footer">
-                       <button type="submit" class="btn btn-primary" [disabled]="Emp.invalid" >Update</button>
-                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary" [disabled]="Emp.invalid" data-bs-dismiss="modal">Update</button>
+                       <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
                    </div>              
                          </form>
                    </div>

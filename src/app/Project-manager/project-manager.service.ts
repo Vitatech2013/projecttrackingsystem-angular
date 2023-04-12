@@ -25,4 +25,7 @@ export class ProjectManagerService {
   viewEmpsBasedonSuperior(s:any){
     return this.http.get('http://localhost:1234/projectmanager/getemps?superior='+s)
   }
+  updateProjectstatus(id:any,data:any){
+    return this.http.put('http://localhost:1234/projectmanager/updatestatus/'+id,data)
+  }
 }

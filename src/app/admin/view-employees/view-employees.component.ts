@@ -53,6 +53,7 @@ isSuperior(event:any){
   
 
   editemp(e:any){
+    this.eId=e._id
     let selection=e.role;
   let s=''
   if (selection == "Team Leader") {
@@ -64,10 +65,10 @@ isSuperior(event:any){
   else {
     s = "Admin";
   }
+
    this.adminservice.viewEmpsBasedonSuperior(s).subscribe((res:any)=>{
      this.superiors=res
-     console.log(this.superiors);
-     
+    
        })
     this.Emp.patchValue({
       empid:e.empid,
@@ -84,19 +85,18 @@ isSuperior(event:any){
       })
   }
   update(){
-  let data={
-    
-  }
+  
    this.adminservice.updateEmployee(this.eId,this.Emp.value).subscribe((res:any)=>{
-console.log(res);
+    window.location.reload()
 
     alert('update succesfully')
+    
    })
   }
+
   deleteEmp(id:any){
     this.adminservice.deleteEmployee(id).subscribe((res:any)=>{
-   console.log(res,'del');
-   
+      window.location.reload()
     })
   }
   }

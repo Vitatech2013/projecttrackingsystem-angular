@@ -20,7 +20,7 @@
                                 <label for="exampleInputEmail1" class="form-label">Role</label>
                                 <select class="form-select" aria-label="Default select example" formControlName="role" (change)="isSuperior($event)">
                                     <option selected>--select--</option>
-                                    <option value="Project Manger">Project Manger</option>
+                                    <option value="Project Manager">Project Manager</option>
                                     <option value="Team Leader">Team Leader</option>
                                     <option value="Developer">Developer</option>
                                   </select>
@@ -32,7 +32,7 @@
                         <div class="col-sm-4">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Superior</label>
-                                <select class="form-select" aria-label="Default select example" formControlName="superior">
+                                <select class="form-select" formControlName="superior" id="opt" >
                                     <option *ngFor="let s of superiors" value="{{s.username}}">{{s.username}}</option>                      
                                 </select> 
                                

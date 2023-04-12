@@ -47,25 +47,29 @@ addEmp(){
 
 isSuperior(event:any){
 let selection=event.target.value;
-let s=''
+
 if (selection == "Team Leader") {
-  s = "Project Manager";
+  selection = "Project Manager";
 }
 else if (selection == "Developer") {
-  s = "Team Leader";
+  selection = "Team Leader";
 }
 else {
-  s = "Admin";
+  selection = "admin";
 }
 console.log(selection);
+if(selection=="admin"){
+   this.superiors=[{username:'admin'}]  
+}else{
+  this.api.viewEmpsBasedonSuperior(selection).subscribe((res:any)=>{
+    this.superiors=res
+ console.log(res);
+ 
+   
+      })
+}
 
-
-
- this.api.viewEmpsBasedonSuperior(s).subscribe((res:any)=>{
-   this.superiors=res
-
-  
-     })
+ 
 }
 //  addEmp(){
 //   this.api.PostEmp(this.Emp).subscribe((res:any)=>{

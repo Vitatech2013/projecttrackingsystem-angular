@@ -17,7 +17,7 @@ export class TLProfileComponent {
   }
  
    ngOnInit(): void {
-     let pId = JSON.parse(localStorage.getItem('token')!)._id   
+     let pId = JSON.parse(localStorage.getItem('teamleader')!)._id   
    
      
      this.TLprofile =this.fb.group({

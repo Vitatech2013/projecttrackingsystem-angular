@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectManagerService } from '../project-manager.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pm-view-project',
@@ -7,15 +8,20 @@ import { ProjectManagerService } from '../project-manager.service';
   styleUrls: ['./pm-view-project.component.css']
 })
 export class PmViewProjectComponent implements OnInit {
+  updateProject !:FormGroup
   viewprojects:any
   username:any
-  y:any
- constructor(private api:ProjectManagerService){}
+  vId:any
+ constructor(private api:ProjectManagerService,private fb:FormBuilder){}
   ngOnInit(): void {
-
-this.getproject();
-}
-getproject(){
+  this.getproject();
+  this. updateProject = this.fb.group({
+    project:['',[Validators.required]],
+    status:['',[Validators.required]],
+  
+   })
+ }
+  getproject(){
 
   let name =JSON.parse(localStorage.getItem('token')!);
   
@@ -24,4 +30,26 @@ getproject(){
     
   })
 }
+edit(v:any){
+  console.log(v);
+  
+this.vId=v._id
+
+ this.updateProject.patchValue({
+  project:v.project,
+  status:v.status, 
+ })
+
+}
+
+update(){
+   console.log(this.vId,'vid', this.updateProject.value);
+   
+this.api.updateProjectstatus(this.vId,this.updateProject.value).subscribe((res:any)=>{
+ window.location.reload()
+ alert('Update Sucessfully')
+})
+
+}
+
 }
